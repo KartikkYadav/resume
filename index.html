@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kartik Yadav | Cybersecurity Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #0b0f14;
+  --card: #121826;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+  --accent-2: #22d3ee;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, var(--bg));
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-2); }
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.hero-content {
+  background: linear-gradient(180deg, rgba(18,24,38,.9), rgba(18,24,38,.7));
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.6);
+  max-width: 520px;
+  animation: fadeUp .8s ease-out;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.profile-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 30px rgba(56,189,248,.35);
+}
+.hero h1 { font-size: 2.4rem; margin-bottom: .3rem; }
+.subtitle { color: var(--accent); font-weight: 500; }
+.meta { color: var(--muted); margin: .6rem 0 1.2rem; }
+.hero-links a {
+  display: inline-block;
+  margin: .4rem;
+  padding: .5rem 1.2rem;
+  border-radius: 999px;
+  background: #1f2937;
+  font-size: .9rem;
+}
+.hero-links a:hover { background: #111827; }
+
+section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+h2 {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #1f2937;
+  padding-bottom: .5rem;
+}
+ul { list-style: none; }
+li { margin-bottom: .5rem; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+.tag {
+  display: inline-block;
+  background: #1f2937;
+  padding: .35rem .7rem;
+  border-radius: 8px;
+  margin: .25rem;
+  font-size: .85rem;
+}
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  font-size: .85rem;
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <img src="profile.jpg" alt="Kartik Yadav" class="profile-img" />
+    <h1>Kartik Yadav</h1>
+    <p class="subtitle">Cybersecurity Enthusiast • Ethical Hacker • Pentester</p>
+    <p class="meta">📍 Indore, India · ✉️ kartikhyad007@gmail.com</p>
+    <div class="hero-links">
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <a href="mailto:kartikhyad007@gmail.com">Email</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p>
+    Certified Ethical Hacker with a strong foundation in networking, cybersecurity, and system administration.
+    Experienced with Windows and Linux environments, vulnerability assessment, and network security.
+    Passionate about applying offensive security skills in real‑world scenarios.
+  </p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="grid">
+    <div>
+      <h3>System & Network</h3>
+      <span class="tag">Windows Server</span>
+      <span class="tag">Linux</span>
+      <span class="tag">Active Directory</span>
+      <span class="tag">DHCP</span>
+      <span class="tag">DNS</span>
+    </div>
+    <div>
+      <h3>Security</h3>
+      <span class="tag">Reconnaissance</span>
+      <span class="tag">Scanning</span>
+      <span class="tag">Enumeration</span>
+      <span class="tag">Packet Sniffing</span>
+      <span class="tag">System Hacking</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Tools</h2>
+  <div class="grid">
+    <span class="tag">Nmap</span>
+    <span class="tag">Burp Suite</span>
+    <span class="tag">Metasploit</span>
+    <span class="tag">Nikto</span>
+    <span class="tag">Wireshark</span>
+    <span class="tag">Aircrack‑ng</span>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <ul>
+    <li><strong>MCA</strong> – Oriental University (2022–2024)</li>
+    <li><strong>BCA</strong> – Dr. A.P.J. Abdul Kalam University (2018–2021)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <ul>
+    <li>Certified Ethical Hacker (CEH)</li>
+    <li>Web Application Security & Bug Hunting</li>
+    <li>AIWCWSA – Windows Server Administrator</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>
+    📧 Email: <a href="mailto:kartikhyad007@gmail.com">kartikhyad007@gmail.com</a><br />
+    🌐 GitHub: <a href="https://github.com/" target="_blank">github.com/yourusername</a>
+  </p>
+</section>
+
+<footer>
+  © 2026 kartiksec.in · Built with GitHub Pages
+</footer>
+
+</body>
+</html>
