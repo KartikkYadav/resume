@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KARTIK_YADAV | ROOT_ACCESS</title>
-  
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
   <style>
     :root {
       --bg: #050505;
@@ -28,7 +25,6 @@
       overflow-x: hidden;
     }
 
-    /* Matrix Rain Canvas */
     #matrix-canvas {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -36,7 +32,6 @@
       opacity: 0.15;
     }
 
-    /* CRT Scanline Effect */
     body::before {
       content: " ";
       display: block;
@@ -48,24 +43,11 @@
       pointer-events: none;
     }
 
-    a { 
-      color: var(--accent); 
-      text-decoration: none; 
-      border: 1px solid var(--terminal-green); 
-      padding: 5px 15px;
-      margin: 0 10px;
-      transition: 0.3s; 
-      display: inline-block;
-    }
-    
-    a:hover { 
-      background: var(--terminal-green); 
-      color: var(--bg); 
-      box-shadow: 0 0 15px var(--terminal-green); 
-    }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--terminal-green); transition: 0.3s; }
+    a:hover { background: var(--terminal-green); color: var(--bg); box-shadow: 0 0 10px var(--terminal-green); }
 
     .hero {
-      min-height: 100vh;
+      min-height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -78,7 +60,7 @@
       position: relative;
       background: rgba(5, 5, 5, 0.9);
       box-shadow: 0 0 30px var(--glow);
-      max-width: 800px;
+      max-width: 700px;
       width: 100%;
       z-index: 5;
       text-align: center;
@@ -95,22 +77,12 @@
       letter-spacing: 2px;
     }
 
-    /* Profile Image - Normal Colors Restored */
-    .profile-img {
-      width: 200px;
-      height: 250px;
-      object-fit: cover;
-      border: 1px solid var(--terminal-green);
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 20px var(--glow);
-    }
-
     .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 4px; text-shadow: 0 0 10px var(--terminal-green);}
     .subtitle { color: var(--accent); margin-bottom: 1rem; font-weight: 600; }
     .meta { font-size: 0.85rem; opacity: 0.8; margin-bottom: 2rem; color: #888; }
 
     section {
-      max-width: 850px;
+      max-width: 800px;
       margin: 4rem auto;
       padding: 2.5rem;
       border: 1px solid #1a1a1a;
@@ -156,19 +128,12 @@
 
 <header class="hero">
   <div class="hero-content">
-    <img src="profile.jpg" alt="Kartik Yadav" class="profile-img" />
     <h1>Kartik Yadav<span class="cursor"></span></h1>
     <p class="subtitle">[+] Offensive Security Specialist</p>
     <p class="meta">Loc: Indore (M.P) // PH: 9617376358 // Status: Online</p>
-    
     <div class="hero-links">
-      <a href="mailto:karthikyad007@gmail.com">
-        <i class="fas fa-envelope"></i> ./send_ping
-      </a>
-      
-      <a href="https://github.com/KartikkYadav?tab=repositories" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-github"></i> ./view_source
-      </a>
+      <a href="mailto:karthikyad007@gmail.com">./send_ping</a>
+      <a href="#">./view_source</a>
     </div>
   </div>
 </header>
@@ -243,16 +208,14 @@
 </section>
 
 <footer>
-  KARTIK_SEC SYSTEM V.2.0.26 // ENCRYPTION: AES-256 // POWERED BY GITHUB
+  KARTIK_SEC SYSTEM V.2.0.26 // ENCRYPTION: AES-256 // POWERED BY ENHANCV
 </footer>
 
 <script>
-  // Matrix Rain Background Animation
   const canvas = document.getElementById('matrix-canvas');
   const ctx = canvas.getContext('2d');
   canvas.height = window.innerHeight;
   canvas.width = window.innerWidth;
-  
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
   const fontSize = 16;
   const columns = canvas.width / fontSize;
@@ -270,9 +233,7 @@
       drops[i]++;
     }
   }
-  
   setInterval(draw, 35);
-  
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
