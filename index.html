@@ -32,16 +32,7 @@
       opacity: 0.15;
     }
 
-    body::before {
-      content: " ";
-      display: block;
-      position: fixed;
-      top: 0; left: 0; bottom: 0; right: 0;
-      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
-      z-index: 10;
-      background-size: 100% 4px;
-      pointer-events: none;
-    }
+    /* Scanline overlay section removed here */
 
     a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--terminal-green); transition: 0.3s; }
     a:hover { background: var(--terminal-green); color: var(--bg); box-shadow: 0 0 10px var(--terminal-green); }
