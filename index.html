@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +47,7 @@
     a:hover { background: var(--terminal-green); color: var(--bg); box-shadow: 0 0 10px var(--terminal-green); }
 
     .hero {
-      min-height: 90vh;
+      min-height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -64,7 +63,7 @@
       max-width: 700px;
       width: 100%;
       z-index: 5;
-      text-align: center; /* Centered content like your reference image */
+      text-align: center;
     }
 
     .hero-content::before {
@@ -76,18 +75,6 @@
       font-size: 0.75rem;
       color: var(--accent);
       letter-spacing: 2px;
-    }
-
-    /* Styled Profile Image to match the Matrix vibe */
-     {
-      width: 200px;
-      height: 250px;
-      object-fit: cover;
-      border: 1px solid var(--terminal-green);
-      margin-bottom: 1.5rem;
-      /* Hacker-green filter effect */
-      filter: grayscale(100%) brightness(1.1) contrast(1.2) sepia(100%) hue-rotate(80deg) saturate(4);
-      box-shadow: 0 0 20px var(--glow);
     }
 
     .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 4px; text-shadow: 0 0 10px var(--terminal-green);}
@@ -141,7 +128,6 @@
 
 <header class="hero">
   <div class="hero-content">
-    <img src="profile.jpg" alt="Kartik Yadav" class="profile-img" />
     <h1>Kartik Yadav<span class="cursor"></span></h1>
     <p class="subtitle">[+] Offensive Security Specialist</p>
     <p class="meta">Loc: Indore (M.P) // PH: 9617376358 // Status: Online</p>
