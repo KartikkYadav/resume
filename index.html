@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +64,7 @@
       max-width: 700px;
       width: 100%;
       z-index: 5;
-      text-align: center;
+      text-align: center; /* Centered content like your reference image */
     }
 
     .hero-content::before {
@@ -77,15 +78,15 @@
       letter-spacing: 2px;
     }
 
-    /* NORMAL COLOR Profile Image */
+    /* Styled Profile Image to match the Matrix vibe */
     .profile-img {
       width: 200px;
       height: 250px;
       object-fit: cover;
       border: 1px solid var(--terminal-green);
       margin-bottom: 1.5rem;
-      /* Removed sepia and hue-rotate filters to restore normal color */
-      filter: brightness(1.1) contrast(1.1);
+      /* Hacker-green filter effect */
+      filter: grayscale(100%) brightness(1.1) contrast(1.2) sepia(100%) hue-rotate(80deg) saturate(4);
       box-shadow: 0 0 20px var(--glow);
     }
 
