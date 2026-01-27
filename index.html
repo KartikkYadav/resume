@@ -1,243 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KARTIK_YADAV | ROOT_ACCESS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #050505;
-      --terminal-green: #00ff41; 
-      --dim-green: #003b00;
-      --accent: #ffffff;
-      --text: #00ff41;
-      --glow: rgba(0, 255, 65, 0.4);
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KARTIK_YADAV | ROOT_ACCESS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050505;
+      --terminal-green: #00ff41; 
+      --dim-green: #003b00;
+      --accent: #ffffff;
+      --text: #00ff41;
+      --glow: rgba(0, 255, 65, 0.4);
+    }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: 'Fira Code', 'Courier New', monospace;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+    body {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-    #matrix-canvas {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      z-index: -1;
-      opacity: 0.15;
-    }
+    /* Fixed Canvas Positioning */
+    #matrix-canvas {
+      position: fixed;
+      top: 0; 
+      left: 0; 
+      width: 100vw; 
+      height: 100vh;
+      z-index: -1;
+      opacity: 0.25; /* Increased opacity for better visibility */
+    }
 
-    body::before {
-      content: " ";
-      display: block;
-      position: fixed;
-      top: 0; left: 0; bottom: 0; right: 0;
-      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
-      z-index: 10;
-      background-size: 100% 4px;
-      pointer-events: none;
-    }
+    body::before {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
+      z-index: 10;
+      background-size: 100% 4px;
+      pointer-events: none;
+    }
 
-    a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--terminal-green); transition: 0.3s; }
-    a:hover { background: var(--terminal-green); color: var(--bg); box-shadow: 0 0 10px var(--terminal-green); }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--terminal-green); transition: 0.3s; }
+    a:hover { background: var(--terminal-green); color: var(--bg); box-shadow: 0 0 10px var(--terminal-green); }
 
-    .hero {
-      min-height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
+    .hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
 
-    .hero-content {
-      border: 1px solid var(--terminal-green);
-      padding: 3rem;
-      position: relative;
-      background: rgba(5, 5, 5, 0.9);
-      box-shadow: 0 0 30px var(--glow);
-      max-width: 700px;
-      width: 100%;
-      z-index: 5;
-      text-align: center;
-    }
+    .hero-content {
+      border: 1px solid var(--terminal-green);
+      padding: 3rem;
+      position: relative;
+      background: rgba(5, 5, 5, 0.9);
+      box-shadow: 0 0 30px var(--glow);
+      max-width: 700px;
+      width: 100%;
+      z-index: 5;
+      text-align: center;
+    }
 
-    .hero-content::before {
-      content: "AUTHENTICATED_SESSION: KARTIK_YADAV";
-      position: absolute;
-      top: -12px; left: 20px;
-      background: var(--bg);
-      padding: 0 10px;
-      font-size: 0.75rem;
-      color: var(--accent);
-      letter-spacing: 2px;
-    }
+    .hero-content::before {
+      content: "AUTHENTICATED_SESSION: KARTIK_YADAV";
+      position: absolute;
+      top: -12px; left: 20px;
+      background: var(--bg);
+      padding: 0 10px;
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+    }
 
-    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 4px; text-shadow: 0 0 10px var(--terminal-green);}
-    .subtitle { color: var(--accent); margin-bottom: 1rem; font-weight: 600; }
-    .meta { font-size: 0.85rem; opacity: 0.8; margin-bottom: 2rem; color: #888; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 4px; text-shadow: 0 0 10px var(--terminal-green);}
+    .subtitle { color: var(--accent); margin-bottom: 1rem; font-weight: 600; }
+    .meta { font-size: 0.85rem; opacity: 0.8; margin-bottom: 2rem; color: #888; }
 
-    section {
-      max-width: 800px;
-      margin: 4rem auto;
-      padding: 2.5rem;
-      border: 1px solid #1a1a1a;
-      border-left: 4px solid var(--terminal-green);
-      background: rgba(0, 20, 0, 0.6);
-      backdrop-filter: blur(4px);
-    }
+    section {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2.5rem;
+      border: 1px solid #1a1a1a;
+      border-left: 4px solid var(--terminal-green);
+      background: rgba(0, 20, 0, 0.6);
+      backdrop-filter: blur(4px);
+    }
 
-    h2 { margin-bottom: 1.5rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
-    h2::before { content: "> "; color: var(--terminal-green); }
+    h2 { margin-bottom: 1.5rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+    h2::before { content: "> "; color: var(--terminal-green); }
 
-    h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--accent); text-transform: uppercase; }
+    .tag {
+      display: inline-block;
+      border: 1px solid var(--terminal-green);
+      padding: 0.3rem 0.8rem;
+      margin: 0.3rem;
+      font-size: 0.8rem;
+      background: rgba(0, 255, 65, 0.05);
+    }
 
-    .tag {
-      display: inline-block;
-      border: 1px solid var(--terminal-green);
-      padding: 0.3rem 0.8rem;
-      margin: 0.3rem;
-      font-size: 0.8rem;
-      background: rgba(0, 255, 65, 0.05);
-    }
+    .cursor {
+      display: inline-block;
+      width: 12px; height: 24px;
+      background: var(--terminal-green);
+      animation: blink 1s infinite;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
 
-    .cursor {
-      display: inline-block;
-      width: 12px; height: 24px;
-      background: var(--terminal-green);
-      animation: blink 1s infinite;
-      vertical-align: middle;
-      margin-left: 5px;
-    }
+    @keyframes blink { 50% { opacity: 0; } }
 
-    @keyframes blink { 50% { opacity: 0; } }
-
-    .edu-item, .cert-item { margin-bottom: 1.5rem; }
-    .date { color: #888; font-size: 0.85rem; }
-
-    footer { text-align: center; padding: 4rem 1rem; font-size: 0.8rem; opacity: 0.5; letter-spacing: 1px; }
-  </style>
+    footer { text-align: center; padding: 4rem 1rem; font-size: 0.8rem; opacity: 0.5; letter-spacing: 1px; }
+  </style>
 </head>
 <body>
 
 <canvas id="matrix-canvas"></canvas>
 
 <header class="hero">
-  <div class="hero-content">
-    <h1>Kartik Yadav<span class="cursor"></span></h1>
-    <p class="subtitle">[+] Offensive Security Specialist</p>
-    <p class="meta">Loc: Indore (M.P) // PH: 9617376358 // Status: Online</p>
-    <div class="hero-links">
-      <a href="mailto:karthikyad007@gmail.com">./send_ping</a>
-      <a href="#">./view_source</a>
-    </div>
-  </div>
+  <div class="hero-content">
+    <h1>Kartik Yadav<span class="cursor"></span></h1>
+    <p class="subtitle">[+] Offensive Security Specialist</p>
+    <p class="meta">Loc: Indore (M.P) // PH: 9617376358 // Status: Online</p>
+    <div class="hero-links">
+      <a href="mailto:karthikyad007@gmail.com">./send_ping</a>
+      <a href="#">./view_source</a>
+    </div>
+  </div>
 </header>
 
 <section>
-  <h2>System.Summary</h2>
-  <p>Certified Ethical Hacker with a strong foundation in networking, cybersecurity, and system administration. Expertise spans both Windows and Linux environments, allowing for effective vulnerability identification, system securing, and maintenance of robust network infrastructures. Eager to leverage skills in a practical environment.</p>
+  <h2>System.Summary</h2>
+  <p>Certified Ethical Hacker with a strong foundation in networking, cybersecurity, and system administration. Expertise spans both Windows and Linux environments, allowing for effective vulnerability identification, system securing, and maintenance of robust network infrastructures.</p>
 </section>
 
 <section>
-  <h2>Skill_Set</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
-    <div style="flex: 1; min-width: 280px;">
-      <h3>// ADMINISTRATION</h3>
-      <span class="tag">Windows & Linux SysAdmin</span>
-      <span class="tag">Active Directory</span>
-      <span class="tag">DHCP & DNS</span>
-      <span class="tag">Network Configuration</span>
-    </div>
-    <div style="flex: 1; min-width: 280px;">
-      <h3>// OFFENSIVE_OPS</h3>
-      <span class="tag">Reconnaissance & Footprinting</span>
-      <span class="tag">Scanning & Enumeration</span>
-      <span class="tag">Packet Sniffing & Analysis</span>
-      <span class="tag">System Hacking & Remote Access</span>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Tool_Kit</h2>
-  <div style="margin-top: 1rem;">
-    <span class="tag">Burp Suite</span>
-    <span class="tag">Nmap</span>
-    <span class="tag">Metasploit</span>
-    <span class="tag">Nikto</span>
-    <span class="tag">Wireshark</span>
-    <span class="tag">Aircrack-ng</span>
-    <span class="tag">Linux</span>
-    <span class="tag">Windows Server</span>
-  </div>
-</section>
-
-<section>
-  <h2>Education.History</h2>
-  <div class="edu-item">
-    <p style="color: var(--accent);">Masters in Computer Application (MCA)</p>
-    <p>Oriental University</p>
-    <p class="date">05/2022 - 05/2024 | Indore (M.P)</p>
-  </div>
-  <div class="edu-item">
-    <p style="color: var(--accent);">Bachelor in Computer Application (BCA)</p>
-    <p>Dr. A.P.J. Abdul Kalam University</p>
-    <p class="date">06/2018 - 06/2021</p>
-  </div>
-</section>
-
-<section>
-  <h2>Credentials.Certifications</h2>
-  <div class="cert-item">
-    <p style="color: var(--accent);">Certified Ethical Hacker (CEH)</p>
-    <p class="date">Core Certification in Offensive Security</p>
-  </div>
-  <div class="cert-item">
-    <p style="color: var(--accent);">Web Application Security and Bug Hunting</p>
-    <p class="date">Focus on web vulnerabilities and exploitation</p>
-  </div>
-  <div class="cert-item">
-    <p style="color: var(--accent);">Armour Infosec Certified Windows Server Administrator (AICWSA)</p>
-    <p class="date">Specialized in Windows Server Administration</p>
-  </div>
+  <h2>Skill_Set</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+    <div style="flex: 1; min-width: 280px;">
+      <h3>// ADMINISTRATION</h3>
+      <span class="tag">Windows & Linux SysAdmin</span>
+      <span class="tag">Active Directory</span>
+      <span class="tag">DHCP & DNS</span>
+    </div>
+    <div style="flex: 1; min-width: 280px;">
+      <h3>// OFFENSIVE_OPS</h3>
+      <span class="tag">Reconnaissance</span>
+      <span class="tag">Packet Sniffing</span>
+      <span class="tag">System Hacking</span>
+    </div>
+  </div>
 </section>
 
 <footer>
-  KARTIK_SEC SYSTEM V.2.0.26 // ENCRYPTION: AES-256 // POWERED BY ENHANCV
+  KARTIK_SEC SYSTEM V.2.0.26 // ENCRYPTION: AES-256
 </footer>
 
 <script>
-  const canvas = document.getElementById('matrix-canvas');
-  const ctx = canvas.getContext('2d');
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
-  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
-  const fontSize = 16;
-  const columns = canvas.width / fontSize;
-  const drops = Array(Math.floor(columns)).fill(1);
+  const canvas = document.getElementById('matrix-canvas');
+  const ctx = canvas.getContext('2d');
 
-  function draw() {
-    ctx.fillStyle = "rgba(5, 5, 5, 0.05)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#00ff41";
-    ctx.font = fontSize + "px monospace";
-    for (let i = 0; i < drops.length; i++) {
-      const text = characters.charAt(Math.floor(Math.random() * characters.length));
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-      drops[i]++;
-    }
-  }
-  setInterval(draw, 35);
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
+  // Function to set canvas size
+  function setCanvasSize() {
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+  }
+
+  setCanvasSize();
+
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
+  const fontSize = 16;
+  let columns = Math.floor(canvas.width / fontSize);
+  let drops = Array(columns).fill(1);
+
+  function draw() {
+    // Semi-transparent black to create trailing effect
+    ctx.fillStyle = "rgba(5, 5, 5, 0.1)"; 
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff41";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = characters.charAt(Math.floor(Math.random() * characters.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 35);
+
+  window.addEventListener('resize', () => {
+    setCanvasSize();
+    columns = Math.floor(canvas.width / fontSize);
+    drops = Array(columns).fill(1);
+  });
 </script>
 
 </body>
