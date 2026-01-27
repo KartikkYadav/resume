@@ -32,17 +32,36 @@
       opacity: 0.15;
     }
 
-    /* Scanline overlay section removed here */
-
     a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--terminal-green); transition: 0.3s; }
     a:hover { background: var(--terminal-green); color: var(--bg); box-shadow: 0 0 10px var(--terminal-green); }
 
     .hero {
       min-height: 60vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 2rem;
+    }
+
+    /* Profile Image Styling */
+    .profile-container {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 2rem;
+      border-radius: 50%;
+      border: 3px solid var(--terminal-green);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 20px var(--glow);
+      z-index: 5;
+    }
+
+    .profile-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(110%);
     }
 
     .hero-content {
@@ -118,6 +137,10 @@
 <canvas id="matrix-canvas"></canvas>
 
 <header class="hero">
+  <div class="profile-container">
+    <img src="profile.jpg" alt="Kartik Yadav Profile Photo">
+  </div>
+
   <div class="hero-content">
     <h1>Kartik Yadav<span class="cursor"></span></h1>
     <p class="subtitle">[+] Offensive Security Specialist</p>
