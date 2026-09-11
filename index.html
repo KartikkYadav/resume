@@ -1,223 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KARTIK_YADAV | ROOT_ACCESS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #050505;
-      --terminal-green: #00ff41; 
-      --dim-green: #003b00;
-      --accent: #ffffff;
-      --text: #00ff41;
-      --glow: rgba(0, 255, 65, 0.4);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Fira Code', 'Courier New', monospace;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    #matrix-canvas {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      z-index: -1;
-      opacity: 0.15;
-    }
-
-    a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--terminal-green); transition: 0.3s; }
-    a:hover { background: var(--terminal-green); color: var(--bg); box-shadow: 0 0 10px var(--terminal-green); }
-
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .hero-content {
-      border: 1px solid var(--terminal-green);
-      padding: 3rem;
-      position: relative;
-      background: rgba(5, 5, 5, 0.9);
-      box-shadow: 0 0 30px var(--glow);
-      max-width: 700px;
-      width: 100%;
-      z-index: 5;
-      text-align: center;
-    }
-
-    .hero-content::before {
-      content: "AUTHENTICATED_SESSION: KARTIK_YADAV";
-      position: absolute;
-      top: -12px; left: 20px;
-      background: var(--bg);
-      padding: 0 10px;
-      font-size: 0.75rem;
-      color: var(--accent);
-      letter-spacing: 2px;
-    }
-
-    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 4px; text-shadow: 0 0 10px var(--terminal-green);}
-    .subtitle { color: var(--accent); margin-bottom: 1rem; font-weight: 600; }
-    .meta { font-size: 0.85rem; opacity: 0.8; margin-bottom: 2rem; color: #888; }
-
-    section {
-      max-width: 800px;
-      margin: 4rem auto;
-      padding: 2.5rem;
-      border: 1px solid #1a1a1a;
-      border-left: 4px solid var(--terminal-green);
-      background: rgba(0, 20, 0, 0.6);
-      backdrop-filter: blur(4px);
-    }
-
-    h2 { margin-bottom: 1.5rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
-    h2::before { content: "> "; color: var(--terminal-green); }
-
-    h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--accent); text-transform: uppercase; }
-
-    .tag {
-      display: inline-block;
-      border: 1px solid var(--terminal-green);
-      padding: 0.3rem 0.8rem;
-      margin: 0.3rem;
-      font-size: 0.8rem;
-      background: rgba(0, 255, 65, 0.05);
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 12px; height: 24px;
-      background: var(--terminal-green);
-      animation: blink 1s infinite;
-      vertical-align: middle;
-      margin-left: 5px;
-    }
-
-    @keyframes blink { 50% { opacity: 0; } }
-
-    .edu-item, .cert-item { margin-bottom: 1.5rem; }
-    .date { color: #888; font-size: 0.85rem; }
-
-    footer { text-align: center; padding: 4rem 1rem; font-size: 0.8rem; opacity: 0.5; letter-spacing: 1px; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kartik Yadav — Offensive Security Specialist | kartiksec.in</title>
+<meta name="description" content="Kartik Yadav — Offensive Security Specialist from Indore. Certified Ethical Hacker, Web App Pentesting, VAPT, CTF. 5+ CTFs, 20+ TryHackMe labs. MCA, BCA." />
+<meta property="og:title" content="Kartik Yadav — Offensive Security Specialist" />
+<meta property="og:image" content="profile.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#050a07;
+    --bg-soft:#0a1410;
+    --card:#0f1f18;
+    --card-2:#0b1912;
+    --line:#143324;
+    --line-2:#1e4d36;
+    --green:#00ff41;
+    --green-bright:#2aff5f;
+    --green-dim:#0a2a14;
+    --muted:#7a9e8a;
+    --mut:#9eb8a8;
+    --text:#e6ffe9;
+    --white:#ffffff;
+    --accent:#00d1ff;
+    --red:#ff3b30;
+    --warn:#ffb020;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  /* matrix bg */
+  #matrix{position:fixed;inset:0;z-index:-2;opacity:0.10}
+  .aurora{position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(800px 500px at 20% 0%, rgba(0,255,65,0.18), transparent 60%),
+      radial-gradient(700px 400px at 90% 10%, rgba(0,209,255,0.12), transparent 60%),
+      radial-gradient(600px 600px at 50% 100%, rgba(0,255,65,0.08), transparent 60%);
+  }
+  .grid-overlay{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0.04;
+    background-image: linear-gradient(rgba(0,255,65,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,1) 1px, transparent 1px);
+    background-size:40px 40px;
+  }
+  /* nav */
+  nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(12px);
+    background:rgba(5,10,7,0.78);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-mark{width:36px;height:36px;border:1px solid var(--green);background:rgba(0,255,65,0.08);display:grid;place-items:center;font-family:'Fira Code',monospace;font-weight:700;color:var(--green);font-size:14px;letter-spacing:1px;box-shadow:0 0 16px rgba(0,255,65,0.25)}
+  .brand h1{font-family:'Fira Code',monospace;font-size:15px;letter-spacing:2px;font-weight:700}
+  .brand h1 span{color:var(--green)}
+  .brand p{font-size:11px;letter-spacing:1.5px;color:var(--muted);font-family:'Fira Code',monospace;margin-top:2px}
+  .nav-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .nav-links a{font-family:'Fira Code',monospace;font-size:12px;letter-spacing:1px;color:var(--muted);border:1px solid transparent;padding:7px 10px;transition:.2s}
+  .nav-links a:hover{color:var(--green);border-color:var(--line-2);background:rgba(0,255,65,0.06);box-shadow:0 0 12px rgba(0,255,65,0.15)}
+  .nav-cta{background:var(--green);color:#021204!important;border-color:var(--green)!important;font-weight:700}
+  .nav-cta:hover{background:var(--green-bright)!important;box-shadow:0 0 18px rgba(0,255,65,0.6)!important}
+  .hamburger{display:none;border:1px solid var(--line);background:rgba(0,255,65,0.06);color:var(--green);padding:8px 10px;font-family:'Fira Code',monospace;font-size:13px}
+  @media(max-width:860px){.nav-links{display:none}.nav-links.open{display:flex;position:absolute;top:60px;left:0;right:0;background:rgba(5,10,7,0.98);border-bottom:1px solid var(--line);padding:16px 20px;flex-direction:column;align-items:stretch}.hamburger{display:block}}
+  /* layout */
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  section{padding:56px 0}
+  .kicker{font-family:'Fira Code',monospace;font-size:11px;letter-spacing:2.5px;color:var(--green);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+  .kicker::before{content:'';width:22px;height:2px;background:var(--green);display:inline-block;box-shadow:0 0 8px var(--green)}
+  h2{font-size:28px;letter-spacing:-0.5px;font-weight:800;line-height:1.15}
+  h2 em{font-style:normal;color:var(--green)}
+  .sub{color:var(--mut);margin-top:10px;max-width:720px;font-size:14.5px}
+  /* hero */
+  .hero{padding:42px 0 24px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:28px;align-items:center}
+  .terminal{
+    border:1px solid var(--line-2);
+    background:linear-gradient(180deg, rgba(15,31,24,0.95), rgba(10,20,16,0.98));
+    box-shadow:0 0 40px rgba(0,255,65,0.15), inset 0 1px 0 rgba(255,255,255,0.04);
+    overflow:hidden;
+  }
+  .term-head{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--line);background:rgba(0,255,65,0.06);font-family:'Fira Code',monospace;font-size:11px;letter-spacing:1px;color:var(--muted)}
+  .dots{display:flex;gap:6px;margin-right:10px}
+  .dots i{width:10px;height:10px;border-radius:50%;display:block}
+  .d1{background:#ff5f56;border:1px solid #e0443e}.d2{background:#ffbd2e;border:1px solid #d9a01c}.d3{background:#27c93f;border:1px solid #1aa22f}
+  .term-body{padding:22px 22px 18px}
+  .eyebrow{font-family:'Fira Code',monospace;font-size:11px;letter-spacing:2px;color:var(--green);margin-bottom:10px}
+  .hero-title{font-size:42px;line-height:0.95;letter-spacing:-1.5px;font-weight:800}
+  .hero-title span{color:var(--green);text-shadow:0 0 18px rgba(0,255,65,0.5)}
+  .typed{font-family:'Fira Code',monospace;font-size:14px;color:#c8ffe0;margin-top:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .typed b{color:var(--white)}
+  .cursor{width:10px;height:18px;background:var(--green);display:inline-block;animation:blink 1s steps(1) infinite;box-shadow:0 0 8px var(--green)}
+  @keyframes blink{50%{opacity:0}}
+  .hero-desc{margin-top:14px;color:var(--mut);font-size:14.5px;line-height:1.7;max-width:560px}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .pill{font-family:'Fira Code',monospace;font-size:11px;letter-spacing:1px;padding:7px 10px;border:1px solid var(--line-2);background:rgba(0,255,65,0.06);color:var(--mut)}
+  .pill strong{color:var(--green)}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+  .btn{font-family:'Fira Code',monospace;font-size:12px;letter-spacing:1px;padding:12px 18px;border:1px solid var(--green);display:inline-flex;align-items:center;gap:8px;transition:.2s;font-weight:700}
+  .btn-primary{background:var(--green);color:#021204;box-shadow:0 0 18px rgba(0,255,65,0.4)}
+  .btn-primary:hover{background:var(--green-bright);box-shadow:0 0 26px rgba(0,255,65,0.6);transform:translateY(-1px)}
+  .btn-ghost{background:rgba(0,255,65,0.06);color:var(--green)}
+  .btn-ghost:hover{background:rgba(0,255,65,0.12);box-shadow:0 0 16px rgba(0,255,65,0.2)}
+  .hero-card{position:relative;border:1px solid var(--line-2);background:rgba(15,31,24,0.85);backdrop-filter:blur(6px);padding:14px;box-shadow:0 0 30px rgba(0,255,65,0.14)}
+  .hero-card::before{content:'AUTHENTICATED_SESSION: KARTIK_YADAV';position:absolute;top:-10px;left:14px;background:var(--bg);border:1px solid var(--line-2);padding:2px 8px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;color:var(--green)}
+  .profile-wrap{position:relative;overflow:hidden;border:1px solid var(--line-2);background:#020604}
+  .profile-wrap img{width:100%;height:420px;object-fit:cover;object-position:top center;display:block;filter:contrast(1.05) saturate(1.05)}
+  .profile-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(0,255,65,0.08) 100%);pointer-events:none}
+  .scan{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg, transparent, var(--green), transparent);top:0;animation:scan 2.8s linear infinite;opacity:0.9;box-shadow:0 0 12px var(--green)}
+  @keyframes scan{0%{top:0}100%{top:100%}}
+  .card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+  .stat{border:1px solid var(--line);background:rgba(0,255,65,0.06);padding:10px;text-align:center}
+  .stat b{font-family:'Fira Code',monospace;font-size:18px;color:var(--green);display:block;line-height:1}
+  .stat span{font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1px;color:var(--muted)}
+  .status-row{display:flex;align-items:center;gap:8px;margin-top:10px;font-family:'Fira Code',monospace;font-size:11px;letter-spacing:1px;color:var(--muted)}
+  .dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green);animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.45}}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-title{font-size:34px}.profile-wrap img{height:360px}}
+  /* cards */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:900px){.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(15,31,24,0.92), rgba(11,25,18,0.96));padding:18px;position:relative;overflow:hidden}
+  .card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green);opacity:0.9;box-shadow:0 0 10px var(--green)}
+  .card h3{font-family:'Fira Code',monospace;font-size:12px;letter-spacing:1.5px;color:var(--green);margin-bottom:8px}
+  .card p{color:var(--mut);font-size:13.5px;line-height:1.7}
+  .card ul{margin-top:10px;padding-left:18px;color:var(--mut);font-size:13.5px}
+  .card li{margin:6px 0}
+  .card li::marker{color:var(--green)}
+  /* tags */
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .tag{font-family:'Fira Code',monospace;font-size:11px;letter-spacing:0.5px;padding:7px 10px;border:1px solid var(--line-2);background:rgba(0,255,65,0.06);color:var(--text);transition:.15s}
+  .tag:hover{border-color:var(--green);box-shadow:0 0 12px rgba(0,255,65,0.18);transform:translateY(-1px)}
+  /* cert gallery */
+  .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+  @media(max-width:1020px){.cert-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.cert-grid{grid-template-columns:1fr}}
+  .cert{border:1px solid var(--line);background:rgba(15,31,24,0.9);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+  .cert:hover{border-color:var(--green);box-shadow:0 0 22px rgba(0,255,65,0.18);transform:translateY(-2px)}
+  .cert-thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:#020604;border-bottom:1px solid var(--line)}
+  .cert-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+  .cert:hover .cert-thumb img{transform:scale(1.04)}
+  .cert-badge{position:absolute;top:10px;left:10px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1px;padding:4px 7px;background:rgba(0,255,65,0.14);border:1px solid rgba(0,255,65,0.5);color:var(--green);backdrop-filter:blur(4px)}
+  .cert-body{padding:14px 14px 12px;flex:1;display:flex;flex-direction:column;gap:6px}
+  .cert-body h4{font-size:13.5px;line-height:1.3;font-weight:700;letter-spacing:-0.2px}
+  .cert-body p{font-size:12px;color:var(--muted);line-height:1.5}
+  .cert-meta{font-family:'Fira Code',monospace;font-size:10.5px;letter-spacing:1px;color:var(--mut);margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .cert-meta a{border:1px solid var(--line-2);padding:6px 8px;font-size:10.5px;color:var(--green);background:rgba(0,255,65,0.06)}
+  .cert-meta a:hover{background:var(--green);color:#021204}
+  /* timeline */
+  .timeline{position:relative;margin-top:18px;padding-left:22px;border-left:1px solid var(--line)}
+  .tl-item{position:relative;padding:14px 16px;border:1px solid var(--line);background:rgba(15,31,24,0.9);margin-bottom:14px}
+  .tl-item::before{content:'';position:absolute;left:-23px;top:18px;width:10px;height:10px;background:var(--green);border:2px solid var(--bg);box-shadow:0 0 0 2px var(--green), 0 0 12px var(--green)}
+  .tl-item h4{font-size:14px;font-weight:800;letter-spacing:-0.2px}
+  .tl-item .where{font-size:12px;color:var(--muted);margin-top:2px}
+  .tl-item .when{font-family:'Fira Code',monospace;font-size:11px;letter-spacing:1px;color:var(--green);margin-top:6px}
+  /* CTF */
+  .ctf-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+  @media(max-width:700px){.ctf-list{grid-template-columns:1fr}}
+  .ctf{border:1px solid var(--line);background:rgba(0,255,65,0.04);padding:14px;display:flex;gap:12px;align-items:flex-start}
+  .ctf-icon{width:34px;height:34px;border:1px solid var(--line-2);display:grid;place-items:center;background:rgba(0,255,65,0.08);color:var(--green);font-family:'Fira Code',monospace;font-size:14px;flex-shrink:0}
+  .ctf h4{font-size:13px;font-weight:700}
+  .ctf p{font-size:12.5px;color:var(--mut);margin-top:4px;line-height:1.6}
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:16px;margin-top:18px}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+  .contact-card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(15,31,24,0.95), rgba(11,25,18,0.98));padding:18px}
+  .contact-card h3{font-family:'Fira Code',monospace;font-size:12px;letter-spacing:1.5px;color:var(--green);margin-bottom:12px}
+  .contact-row{display:flex;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);background:rgba(0,255,65,0.04);margin-bottom:10px;font-size:13px}
+  .contact-row i{width:32px;height:32px;border:1px solid var(--line-2);display:grid;place-items:center;background:rgba(0,255,65,0.08);color:var(--green);flex-shrink:0;font-style:normal;font-family:'Fira Code',monospace;font-size:13px}
+  .contact-row a{color:var(--text);word-break:break-all}
+  .contact-row a:hover{color:var(--green)}
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.82);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:80;padding:20px}
+  .lightbox.open{display:flex}
+  .lightbox-inner{max-width:min(1100px, 96vw);max-height:92vh;position:relative;border:1px solid var(--line-2);background:#020604;box-shadow:0 0 40px rgba(0,255,65,0.25);overflow:auto}
+  .lightbox-inner img{max-width:100%;height:auto;display:block}
+  .lightbox-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px;border-bottom:1px solid var(--line);background:rgba(15,31,24,0.95);position:sticky;top:0}
+  .lightbox-bar b{font-family:'Fira Code',monospace;font-size:11px;letter-spacing:1px;color:var(--green)}
+  .x{border:1px solid var(--line-2);background:rgba(0,255,65,0.08);color:var(--green);padding:6px 10px;font-family:'Fira Code',monospace;font-size:12px;cursor:pointer}
+  .x:hover{background:var(--green);color:#021204}
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:22px 0;text-align:center;color:var(--muted);font-family:'Fira Code',monospace;font-size:11px;letter-spacing:1px}
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(10px);transition:opacity .6s, transform .6s}
+  .reveal.in{opacity:1;transform:none}
+</style>
 </head>
 <body>
-
-<canvas id="matrix-canvas"></canvas>
-
-<header class="hero">
-  <div class="hero-content">
-    <h1>Kartik Yadav<span class="cursor"></span></h1>
-    <p class="subtitle">[+] Offensive Security Specialist</p>
-    <p class="meta">Loc: Indore (M.P) // Status: Online</p>
-    <div class="hero-links">
-      <a href="mailto:kartikyad007@gmail.com">./send_ping</a>
-      <a href="#">./view_source</a>
+<canvas id="matrix"></canvas>
+<div class="aurora"></div>
+<div class="grid-overlay"></div>
+          <nav>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-mark">KS</div>
+      <div>
+        <h1>KARTIK<span>SEC</span>.IN</h1>
+        <p>ROOT_ACCESS // KARTIK_YADAV</p>
+      </div>
+    </div>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰ MENU</button>
+    <div class="nav-links">
+      <a href="#about">ABOUT</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#certs">CERTS</a>
+      <a href="#education">EDUCATION</a>
+      <a href="#ctf">CTF</a>
+      <a href="#contact">CONTACT</a>
+      <a class="nav-cta" href="Certification/Resume.pdf" target="_blank" rel="noopener">↗ RESUME</a>
+    </div>
+  </div>
+</nav>
+          <header class="hero wrap">
+  <div class="hero-grid">
+    <div class="terminal reveal in">
+      <div class="term-head"><span class="dots"><i class="d1"></i><i class="d2"></i><i class="d3"></i></span> kartik@kali:~ — zsh — 80×24</div>
+      <div class="term-body">
+        <div class="eyebrow">OFFENSIVE SECURITY SPECIALIST • VAPT • PENTEST</div>
+        <div class="hero-title">KARTIK<br><span>YADAV</span></div>
+        <div class="typed"><span style="color:var(--green)">❯</span> <span id="typed"></span><span class="cursor"></span></div>
+        <p class="hero-desc">
+          Certified Ethical Hacker with hands-on expertise in web application security, vulnerability assessment & penetration testing.
+          Linux + Windows, Active Directory, network enumeration — sharpened through CTFs, HTB/TryHackMe labs and real-world bug hunting.
+          Currently preparing for <b style="color:var(--text)">HTB CPTS</b>.
+        </p>
+        <div class="hero-meta">
+          <span class="pill"><strong>LOC</strong> Indore, M.P, India</span>
+          <span class="pill"><strong>ROLE</strong> Seeking VAPT / Pentest</span>
+          </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:kartikyad007@gmail.com">✉ SEND_PING</a>
+          <a class="btn btn-ghost" href="https://github.com/KartikkYadav" target="_blank" rel="noopener">↗ GITHUB</a>
+          <a class="btn btn-ghost" href="Certification/Resume.pdf" target="_blank" rel="noopener">⬇ RESUME_PDF</a>
+        </div>
+        <div class="status-row"><span class="dot"></span> STATUS: ONLINE &nbsp;•&nbsp; AVAILABLE FOR OPPORTUNITIES &nbsp;•&nbsp; kartikyad007@gmail.com</div>
+      </div>
+    </div>
+          <div class="hero-card reveal in">
+      <div class="profile-wrap">
+        <img src="profile.jpg" alt="Kartik Yadav" onerror="this.style.display='none'" />
+        <div class="scan"></div>
+      </div>
+      <div class="card-stats">
+        <div class="stat"><b>5+</b><span>CTFs</span></div>
+        <div class="stat"><b>20+</b><span>THM LABS</span></div>
+        <div class="stat"><b>6+</b><span>CERTS</span></div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn btn-ghost" style="flex:1;justify-content:center;padding:10px" href="https://github.com/KartikkYadav" target="_blank" rel="noopener">GITHUB</a>
+        <a class="btn btn-ghost" style="flex:1;justify-content:center;padding:10px" href="mailto:kartikyad007@gmail.com">EMAIL</a>
+      </div>
     </div>
   </div>
 </header>
-
-<section>
-  <h2>System.Summary</h2>
-  <p>Certified Ethical Hacker with a strong foundation in networking, cybersecurity, and system administration. Expertise spans both Windows and Linux environments, allowing for effective vulnerability identification, system securing, and maintenance of robust network infrastructures.</p>
-</section>
-
-<section>
-  <h2>Skill_Set</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
-    <div style="flex: 1; min-width: 280px;">
-      <h3>// ADMINISTRATION</h3>
-      <span class="tag">Windows & Linux SysAdmin</span>
-      <span class="tag">Active Directory</span>
-      <span class="tag">DHCP & DNS</span>
-      <span class="tag">Network Configuration</span>
+          <section id="about" class="wrap reveal">
+  <div class="kicker">SYSTEM.SUMMARY</div>
+  <h2>About <em>— offensive mindset, defender discipline.</em></h2>
+  <p class="sub">Strong foundation in networking, cybersecurity & system administration across Windows and Linux. I hunt vulnerabilities, document them cleanly, and help teams ship safer systems.</p>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card">
+      <h3>// WHAT I DO</h3>
+      <p>Web application penetration testing (OWASP Top 10, auth & access control), reconnaissance & footprinting, scanning/enumeration, server exploitation, packet analysis and privilege escalation — with a focus on reproducible PoCs and clear reporting.</p>
+      <div class="tags">
+        <span class="tag">VAPT</span><span class="tag">Pentesting</span><span class="tag">Bug Hunting</span><span class="tag">Report Writing</span>
+      </div>
     </div>
-    <div style="flex: 1; min-width: 280px;">
-      <h3>// OFFENSIVE_OPS</h3>
-      <span class="tag">Reconnaissance & Footprinting</span>
-      <span class="tag">Scanning & Enumeration</span>
-      <span class="tag">Packet Sniffing & Analysis</span>
-      <span class="tag">System Hacking & Remote Access</span>
+    <div class="card">
+      <h3>// HOW I WORK</h3>
+      <ul>
+        <li>Methodical recon → targeted enumeration → manual validation</li>
+        <li>Tool-assisted, human-verified — no noisy scanner dumps</li>
+        <li>Clean, developer-friendly remediation guidance</li>
+        <li>Linux & Windows tradecraft, AD fundamentals, lateral movement concepts</li>
+      </ul>
     </div>
   </div>
 </section>
-
-<section>
-  <h2>Tool_Kit</h2>
-  <div style="margin-top: 1rem;">
-    <span class="tag">Burp Suite</span>
-    <span class="tag">Nmap</span>
-    <span class="tag">Metasploit</span>
-    <span class="tag">Nikto</span>
-    <span class="tag">Wireshark</span>
-    <span class="tag">Aircrack-ng</span>
-    <span class="tag">Linux</span>
-    <span class="tag">Windows Server</span>
+          <section id="skills" class="wrap reveal">
+  <div class="kicker">SKILL_SET</div>
+  <h2>Skills & <em>toolkit</em></h2>
+  <p class="sub">Built around real labs, CTFs and assessments — not just theory.</p>
+          <div class="grid-3" style="margin-top:18px">
+    <div class="card">
+      <h3>// WEB SECURITY</h3>
+      <div class="tags">
+        <span class="tag">OWASP Top 10</span><span class="tag">Web App Pentesting</span><span class="tag">Auth & Access Control</span><span class="tag">Vulnerability Assessment</span><span class="tag">Bug Hunting</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>// NETWORK & SYSTEM</h3>
+      <div class="tags">
+        <span class="tag">Network Scanning & Enumeration</span><span class="tag">Active Directory Fundamentals</span><span class="tag">Lateral Movement</span><span class="tag">Packet Analysis</span><span class="tag">Linux & Windows SysAdmin</span><span class="tag">Privilege Escalation</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>// SECURITY CONCEPTS</h3>
+      <div class="tags">
+        <span class="tag">Reconnaissance</span><span class="tag">Footprinting</span><span class="tag">Server Exploitation</span><span class="tag">Vuln Identification</span><span class="tag">Security Testing Methodologies</span>
+      </div>
+    </div>
+  </div>
+          <div class="card" style="margin-top:16px">
+    <h3>// TOOL_KIT</h3>
+    <div class="tags" style="margin-top:10px">
+      <span class="tag">Burp Suite</span><span class="tag">Nmap</span><span class="tag">Metasploit</span><span class="tag">Nikto</span><span class="tag">BloodHound</span><span class="tag">Wireshark</span><span class="tag">Aircrack-ng</span><span class="tag">Dirsearch</span><span class="tag">Gobuster</span><span class="tag">Netcat</span><span class="tag">Hydra</span><span class="tag">Linux</span><span class="tag">Windows Server</span><span class="tag">DHCP & DNS</span><span class="tag">Active Directory</span>
+    </div>
   </div>
 </section>
-
-<section>
-  <h2>NIMCET AIR 1010</h2>
+          <section id="certs" class="wrap reveal">
+  <div class="kicker">CREDENTIALS.CERTIFICATIONS</div>
+  <h2>Certifications & <em>verified credentials</em></h2>
+  <p class="sub">Tap any certificate to preview full-size. All originals are in <code style="font-family:'Fira Code',monospace;background:rgba(0,255,65,0.08);border:1px solid var(--line);padding:1px 6px">/Certification</code>. Resume also available as PDF.</p>
+          <div class="cert-grid">
+    <article class="cert">
+      <div class="cert-thumb">
+        <img src="Certification/CEH.jpeg" alt="Certified Ethical Hacker" loading="lazy" />
+        <span class="cert-badge">CEH</span>
+      </div>
+      <div class="cert-body">
+        <h4>Certified Ethical Hacker</h4>
+        <p>Certified Ethical Hacker — core offensive security certification.</p>
+        <div class="cert-meta"><span>CEH</span><a href="#" onclick="openLightbox('Certification/CEH.jpeg','Certified Ethical Hacker');return false">VIEW →</a></div>
+      </div>
+    </article>
+          <article class="cert">
+      <div class="cert-thumb">
+        <img src="Certification/Armour-Infosec-Web-Application-Penetration-Tester.png" alt="Armour Infosec Web Application Penetration Tester" loading="lazy" onerror="this.parentElement.innerHTML='<div style=padding:40px;text-align:center;color:var(--muted);font-family:Fira Code,monospace>Image preview<br>— add file to /Certification —</div>'"/>
+        <span class="cert-badge">ARMOUR INFOSec</span>
+      </div>
+      <div class="cert-body">
+        <h4>Web Application Penetration Tester</h4>
+        <p>Armour Infosec — Web exploitation, OWASP, manual pentest methodology.</p>
+        <div class="cert-meta"><span>WAAPT</span><a href="#" onclick="openLightbox('Certification/Armour-Infosec-Web-Application-Penetration-Tester.png','Armour Infosec — Web Application Penetration Tester');return false">VIEW →</a></div>
+      </div>
+    </article>
+          <article class="cert">
+      <div class="cert-thumb">
+        <img src="Certification/Web-Application-Penetration-Tester-2048x1460.png" alt="Web Application Penetration Tester" loading="lazy" />
+        <span class="cert-badge">WAPT</span>
+      </div>
+      <div class="cert-body">
+        <h4>Web Application Penetration Tester</h4>
+        <p>Comprehensive web pentest certification — auth, injection, access control.</p>
+        <div class="cert-meta"><span>2024</span><a href="#" onclick="openLightbox('Certification/Web-Application-Penetration-Tester-2048x1460.png','Web Application Penetration Tester');return false">VIEW →</a></div>
+      </div>
+    </article>
+          <article class="cert">
+      <div class="cert-thumb">
+        <img src="Certification/Certified-Linux-Server-Administrator.png" alt="Certified Linux Server Administrator" loading="lazy" />
+        <span class="cert-badge">AILWSA</span>
+      </div>
+      <div class="cert-body">
+        <h4>Certified Linux Server Administrator</h4>
+        <p>Armour Infosec — Linux hardening, services, networking & administration.</p>
+        <div class="cert-meta"><span>ARMOUR INFOSec</span><a href="#" onclick="openLightbox('Certification/Certified-Linux-Server-Administrator.png','Certified Linux Server Administrator — AILWSA');return false">VIEW →</a></div>
+      </div>
+    </article>
+          <article class="cert">
+      <div class="cert-thumb">
+        <img src="Certification/Certified-WordPress-Security-Expert.png" alt="Certified WordPress Security Expert" loading="lazy" />
+        <span class="cert-badge">WP SECURITY</span>
+      </div>
+      <div class="cert-body">
+        <h4>Certified WordPress Security Expert</h4>
+        <p>WordPress hardening, plugin/theme audit, WAF & misconfiguration review.</p>
+        <div class="cert-meta"><span>ARMOUR INFOSec</span><a href="#" onclick="openLightbox('Certification/Certified-WordPress-Security-Expert.png','Certified WordPress Security Expert');return false">VIEW →</a></div>
+      </div>
+    <article class="cert">
+      <div class="cert-thumb">
+        <img src="Certification/1745312536847.jpeg" alt="Certified Red Team Operation Management" loading="lazy" />
+        <span class="cert-badge">CRTOM</span>
+      </div>
+      <div class="cert-body">
+        <h4>Certified Red Team Operation Management</h4>
+        <p>CRTOM — Red team planning, execution & operation management.</p>
+        <div class="cert-meta"><span>CRTOM</span><a href="#" onclick="openLightbox('Certification/1745312536847.jpeg','Certified Red Team Operation Management');return false">VIEW →</a></div>
+      </div>
+    </article>
+    </article>
+         
+  </div>
 </section>
-
-<section>
-  <h2>Credentials.Certifications</h2>
-  <div class="cert-item">
-    <p style="color: var(--accent);">Certified Ethical Hacker (CEH)</p>
-    <p class="date">Core Certification in Offensive Security</p>
-  </div>
-  <div class="cert-item">
-    <p style="color: var(--accent);">Web Application Security and Bug Hunting</p>
-    <p class="date">Focus on web vulnerabilities and exploitation</p>
-  </div>
-  <div class="cert-item">
-    <p style="color: var(--accent);">Armour Infosec Certified Windows Server Administrator (AICWSA)</p>
-    <p class="date">Specialized in Windows Server Administration</p>
+          <section id="education" class="wrap reveal">
+  <div class="kicker">EDUCATION.TIMELINE</div>
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <h4>Master of Computer Applications (MCA)</h4>
+      <div class="where">Oriental University, Indore</div>
+      <div class="when">2022 — 2024</div>
+    </div>
+    <div class="tl-item">
+      <h4>Bachelor of Computer Applications (BCA)</h4>
+      <div class="where">Dr. A.P.J. Abdul Kalam University, Indore</div>
+      <div class="when">2018 — 2021</div>
+    </div>
   </div>
 </section>
-
-<footer>
-  KARTIK_SEC SYSTEM V.2.0.26 // ENCRYPTION: AES-256 // POWERED BY ENHANCV
+          <section id="ctf" class="wrap reveal">
+  <div class="kicker">CTF.PRACTICAL_EXPERIENCE</div>
+  <h2>Practical experience & <em>CTFs</em></h2>
+  <p class="sub">Learning by breaking — and fixing.</p>
+  <div class="ctf-list">
+    <div class="ctf"><div class="ctf-icon">⚑</div><div><h4>5+ CTF Competitions</h4><p>ESCHATON, Pragyan, Nullcon Goa HackIM, Pascal, CyberQuest — web & network security challenges, live scoreboards, team & solo rounds.</p></div></div>
+    <div class="ctf"><div class="ctf-icon">▶</div><div><h4>20+ TryHackMe Labs</h4><p>Structured paths across web, network & privilege escalation — plus PortSwigger Web Security Academy & Hack The Box labs.</p></div></div>
+    <div class="ctf"><div class="ctf-icon">◆</div><div><h4>Bug Bounty Practice</h4><p>Real-world recon, vulnerability discovery and responsible disclosure practice with written reports.</p></div></div>
+    <div class="ctf"><div class="ctf-icon">⬡</div><div><h4>Currently: HTB CPTS</h4><p>Preparing for Hack The Box Certified Penetration Testing Specialist — active lab time, methodology & reporting.</p></div></div>
+  </div>
+</section>
+          <section id="contact" class="wrap reveal">
+  <div class="kicker">CONTACT.OPEN_SESSION</div>
+  <h2>Let's <em>connect</em></h2>
+  <p class="sub">Open to entry-level cybersecurity, VAPT & penetration testing roles — freelance assessments and collaborations too.</p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>// REACH ME</h3>
+      <div class="contact-row"><i>✉</i><a href="mailto:kartikyad007@gmail.com">kartikyad007@gmail.com</a></div>
+      <div class="contact-row"><i>☎</i><a href="tel:+919617376358">+91 9617376358</a></div>
+      <div class="contact-row"><i>⌖</i><span>Indore, Madhya Pradesh, India</span></div>
+      <div class="contact-row"><i>↗</i><a href="https://github.com/KartikkYadav" target="_blank" rel="noopener">github.com/KartikkYadav</a></div>
+      <div class="contact-row"><i>🌐</i><a href="https://www.kartiksec.in">www.kartiksec.in</a></div>
+    </div>
+    <div class="contact-card">
+      <h3>// QUICK MESSAGE</h3>
+      <p style="color:var(--mut);font-size:13.5px;line-height:1.7">Prefer email for fastest response. Attach scope/target details for assessments and I'll reply with methodology, timeline and next steps. Response typically within 24 hours.</p>
+      <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="mailto:kartikyad007@gmail.com?subject=Opportunity%20via%20kartiksec.in&body=Hi%20Kartik%2C%0A%0A">✉ EMAIL_KARTIK</a>
+        <a class="btn btn-ghost" href="Certification/Resume.pdf" target="_blank" rel="noopener">⬇ DOWNLOAD_RESUME</a>
+      </div>
+      <div style="margin-top:14px;border:1px dashed var(--line);padding:10px;background:rgba(0,255,65,0.04);font-family:'Fira Code',monospace;font-size:11px;color:var(--muted);line-height:1.6">
+        <span style="color:var(--green)">$</span> echo "Available for: VAPT • Web Pentest • Network Assessment • AD Review"<br>
+        <span style="color:var(--mut)">→ Strong analytical & documentation skills • Quick learner • Red Team focused</span>
+      </div>
+    </div>
+  </div>
+</section>
+          <footer>
+  <div class="wrap">KARTIK_SEC SYSTEM V.2.1 • kartiksec.in • © <span id="y"></span> Kartik Yadav • Built with care on GitHub Pages — <a href="https://github.com/KartikkYadav/resume" target="_blank" rel="noopener" style="color:var(--green);border-bottom:1px dashed var(--green)">github.com/KartikkYadav/resume</a></div>
 </footer>
+          <div id="lightbox" class="lightbox" onclick="if(event.target===this) closeLightbox()">
+  <div class="lightbox-inner">
+    <div class="lightbox-bar"><b id="lb-title">CERTIFICATE PREVIEW</b><button class="x" onclick="closeLightbox()">✕ CLOSE</button></div>
+    <img id="lb-img" alt="Certificate preview" />
+  </div>
+</div>
+          <script>
+  // typed effect
+  const phrases = ["Offensive Security Specialist", "Web App Pentester — OWASP Top 10", "VAPT • Recon • Enumeration • Exploitation", "Linux & Windows • AD Fundamentals"];
+  let pi=0, ci=0, del=false, el=document.getElementById('typed');
+  function tick(){
+    const p=phrases[pi];
+    if(!del){ el.textContent=p.slice(0,ci+1); ci++; if(ci===p.length){ del=true; setTimeout(tick,1600); return; } }
+    else { el.textContent=p.slice(0,ci-1); ci--; if(ci===0){ del=false; pi=(pi+1)%phrases.length; } }
+    setTimeout(tick, del? 28: 42);
+  }
+  tick();
+  document.getElementById('y').textContent=new Date().getFullYear();
 
-<script>
-  const canvas = document.getElementById('matrix-canvas');
-  const ctx = canvas.getContext('2d');
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
-  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
-  const fontSize = 16;
-  const columns = canvas.width / fontSize;
-  const drops = Array(Math.floor(columns)).fill(1);
+  // lightbox
+  function openLightbox(src,title){
+    document.getElementById('lb-img').src=src;
+    document.getElementById('lb-title').textContent=title;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
 
-  function draw() {
-    ctx.fillStyle = "rgba(5, 5, 5, 0.05)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#00ff41";
-    ctx.font = fontSize + "px monospace";
-    for (let i = 0; i < drops.length; i++) {
-      const text = characters.charAt(Math.floor(Math.random() * characters.length));
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+  // reveal on scroll
+  const obs=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in') }) },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // matrix
+  const c=document.getElementById('matrix'), ctx=c.getContext('2d');
+  function resize(){ c.width=innerWidth; c.height=innerHeight; }
+  resize(); addEventListener('resize',resize);
+  const chars="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
+  const fs=14; let cols=Math.floor(innerWidth/fs), drops=Array(cols).fill(1);
+  function draw(){
+    ctx.fillStyle="rgba(5,10,7,0.08)"; ctx.fillRect(0,0,c.width,c.height);
+    ctx.fillStyle="#00ff41"; ctx.font=fs+"px monospace";
+    for(let i=0;i<drops.length;i++){
+      const t=chars[Math.floor(Math.random()*chars.length)];
+      ctx.fillText(t,i*fs,drops[i]*fs);
+      if(drops[i]*fs>c.height && Math.random()>0.975) drops[i]=0;
       drops[i]++;
     }
   }
-  setInterval(draw, 35);
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
+  setInterval(draw,38);
 </script>
-
 </body>
 </html>
