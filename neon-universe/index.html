@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050510">
+
+  <title>Neon Universe | Explore Beyond</title>
+  <meta name="description" content="Step into Neon Universe — a futuristic world of creative experiments, interactive projects, digital art and technology.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="#home" class="brand" aria-label="Neon Universe home">
+        <span class="brand-icon">◉</span>
+        <span>NEON <strong>UNIVERSE</strong></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#explore" class="nav-link">Explore</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#about" class="nav-link">About</a>
+      </div>
+
+      <a href="#projects" class="nav-cta">
+        Enter Universe <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          CREATIVE EXPLORER CHALLENGE
+        </div>
+
+        <h1>
+          Enter the<br>
+          <span class="gradient-text">Neon Universe</span>
+        </h1>
+
+        <p class="hero-description">
+          Step into a futuristic world where technology meets imagination.
+          Explore digital dimensions, experiment with creative ideas, and
+          discover what's possible beyond the ordinary.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="button button-primary">
+            Explore Projects <span aria-hidden="true">↗</span>
+          </a>
+
+          <a href="#about" class="button button-secondary">
+            Discover More <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">06</span>
+            <span class="stat-label">Epic Projects</span>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Possibilities</span>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat">
+            <span class="stat-number">01</span>
+            <span class="stat-label">Creative Mind</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" id="explore">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbit orbit-three"></div>
+
+        <div class="planet">
+          <div class="planet-glow"></div>
+          <div class="planet-surface"></div>
+        </div>
+
+        <div class="planet-moon"></div>
+
+        <div class="floating-card">
+          <span class="floating-card-icon">✦</span>
+          <div>
+            <strong>Unknown Dimensions</strong>
+            <p>Beyond imagination</p>
+          </div>
+          <span class="live-indicator"></span>
+        </div>
+
+        <div class="visual-caption">
+          <span class="caption-line"></span>
+          <span>EXPLORE THE UNKNOWN</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects-section container" id="projects">
+      <div class="section-heading">
+        <span class="section-kicker">THE COLLECTION</span>
+        <h2>Our Creative <span class="gradient-text">Universe</span></h2>
+        <p>Six experiments. Endless possibilities. One creative journey.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card project-neon">
+          <div class="project-top">
+            <span class="project-number">01 / EXPERIENCE</span>
+            <span class="project-arrow">↗</span>
+          </div>
+          <div class="project-art art-planet">
+            <div class="mini-orbit"></div>
+            <div class="mini-planet"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">WEB DESIGN</span>
+            <h3>Neon Universe</h3>
+            <p>A futuristic website with glowing interfaces, immersive visuals, and smooth animations.</p>
+            <a href="#home" class="project-link">Explore concept <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card project-particles">
+          <div class="project-top">
+            <span class="project-number">02 / INTERACTION</span>
+            <span class="project-arrow">↗</span>
+          </div>
+          <div class="project-art art-particles">
+            <span>✳</span><span>✦</span><span>✧</span><span>✺</span>
+            <span>·</span><span>✦</span><span>✳</span>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">GENERATIVE ART</span>
+            <h3>Digital Magic</h3>
+            <p>Interactive particle effects that respond to movement and transform into digital art.</p>
+            <a href="#about" class="project-link">Explore concept <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card project-life">
+          <div class="project-top">
+            <span class="project-number">03 / PRODUCTIVITY</span>
+            <span class="project-arrow">↗</span>
+          </div>
+          <div class="project-art art-dashboard">
+            <div class="dashboard-window">
+              <span class="dashboard-dot"></span>
+              <span class="dashboard-dot"></span>
+              <span class="dashboard-dot"></span>
+              <div class="dashboard-ring"></div>
+              <div class="dashboard-bars">
+                <i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">LIFE MANAGEMENT</span>
+            <h3>Level Up Life</h3>
+            <p>A gamified productivity dashboard for habits, goals, mood, and daily progress.</p>
+            <a href="#about" class="project-link">Explore concept <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card project-game">
+          <div class="project-top">
+            <span class="project-number">04 / PLAY</span>
+            <span class="project-arrow">↗</span>
+          </div>
+          <div class="project-art art-game">
+            <div class="game-star star-a"></div>
+            <div class="game-star star-b"></div>
+            <div class="game-platform platform-a"></div>
+            <div class="game-platform platform-b"></div>
+            <div class="game-character">◆</div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">GAME DEVELOPMENT</span>
+            <h3>Mini Game Studio</h3>
+            <p>A playable arcade adventure featuring responsive controls, scoring, and replayability.</p>
+            <a href="#about" class="project-link">Explore concept <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card project-ai">
+          <div class="project-top">
+            <span class="project-number">05 / INTELLIGENCE</span>
+            <span class="project-arrow">↗</span>
+          </div>
+          <div class="project-art art-ai">
+            <div class="ai-core">AI</div>
+            <div class="ai-ring ai-ring-one"></div>
+            <div class="ai-ring ai-ring-two"></div>
+            <span class="ai-node node-a"></span>
+            <span class="ai-node node-b"></span>
+            <span class="ai-node node-c"></span>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">AI EXPERIMENT</span>
+            <h3>My AI Lab</h3>
+            <p>A personal assistant prototype designed to organize ideas, tasks, and creative workflows.</p>
+            <a href="#about" class="project-link">Explore concept <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card project-inventor">
+          <div class="project-top">
+            <span class="project-number">06 / BUILD</span>
+            <span class="project-arrow">↗</span>
+          </div>
+          <div class="project-art art-hardware">
+            <div class="hardware-chip">N</div>
+            <div class="circuit circuit-a"></div>
+            <div class="circuit circuit-b"></div>
+            <div class="circuit circuit-c"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">HARDWARE</span>
+            <h3>Real-World Inventor</h3>
+            <p>A hands-on electronics experiment combining physical components, LEDs, and creative coding.</p>
+            <a href="#about" class="project-link">Explore concept <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-section container" id="about">
+      <div class="about-panel">
+        <div class="about-symbol">✧</div>
+        <div class="about-content">
+          <span class="section-kicker">THE MISSION</span>
+          <h2>Built from curiosity.<br><span class="gradient-text">Powered by imagination.</span></h2>
+          <p>
+            Neon Universe is a creative playground for turning bold ideas into
+            real experiences — one experiment, one line of code, and one
+            breakthrough at a time.
+          </p>
+          <a href="#home" class="button button-primary">Back to the Top ↑</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#home" class="brand">
+        <span class="brand-icon">◉</span>
+        <span>NEON <strong>UNIVERSE</strong></span>
+      </a>
+
+      <p>Designed with <span class="heart">♥</span> and curiosity.</p>
+
+      <span class="footer-credit">CREATIVE EXPLORER · 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
