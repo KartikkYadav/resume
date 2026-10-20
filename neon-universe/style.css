@@ -1583,7 +1583,7 @@ a:focus-visible {
    LAYOUT REPAIR — keep original planet styling
 ========================================= */
 
-/* The HTML has one .hero-grid wrapper inside the hero section. */
+/* The HTML's direct child is .container.hero-grid, not .hero-grid alone. */
 .hero {
   display: block;
   position: relative;
@@ -1593,7 +1593,7 @@ a:focus-visible {
   overflow: hidden;
 }
 
-.hero > .hero-grid {
+.hero > .container.hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
   align-items: center;
@@ -1700,7 +1700,7 @@ a:focus-visible {
     min-height: 680px;
   }
 
-  .hero > .hero-grid {
+  .hero > .container.hero-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
     gap: 18px;
   }
@@ -1730,7 +1730,7 @@ a:focus-visible {
     padding-bottom: 70px;
   }
 
-  .hero > .hero-grid {
+  .hero > .container.hero-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 12px;
   }
