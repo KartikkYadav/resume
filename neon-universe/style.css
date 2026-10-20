@@ -1579,35 +1579,16 @@ a:focus-visible {
 
 
 
+
 /* =========================================
-   LAYOUT REPAIR — keep original planet styling
+   PLANET VISIBILITY FIX
+   Keep the original planet visible; keep cards as overlays around it.
 ========================================= */
 
-/* The HTML's direct child is .container.hero-grid, not .hero-grid alone. */
-.hero {
-  display: block;
-  position: relative;
-  min-height: 760px;
-  padding-top: 70px;
-  padding-bottom: 90px;
-  overflow: hidden;
-}
-
-.hero > .container.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
-  align-items: center;
-  gap: clamp(20px, 3vw, 42px);
-}
-
-/* Keep the original planet gradients, shine, shadow and animations. */
 .hero-visual {
   position: relative;
-  min-width: 0;
   min-height: 520px;
-  display: grid;
-  place-items: center;
-  isolation: isolate;
+  overflow: visible;
 }
 
 .planet-system {
@@ -1616,23 +1597,51 @@ a:focus-visible {
   aspect-ratio: 1;
   display: grid;
   place-items: center;
+  overflow: visible;
 }
 
 .planet-system > .planet {
   position: absolute;
+  display: block;
+  z-index: 2;
   top: 50%;
   left: 50%;
-  width: clamp(210px, 25vw, 310px);
+  width: clamp(230px, 27vw, 310px);
+  height: auto;
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.planet-system > .planet-glow {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 78%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .planet-system > .orbit {
+  z-index: 3;
   top: 50%;
   left: 50%;
 }
 
-/* Position the status panels around the planet. */
+.planet-system > .moon,
+.planet-system > .planet-particle {
+  z-index: 4;
+}
+
+.planet-system > .floating-card {
+  z-index: 5;
+  max-width: 205px;
+  box-sizing: border-box;
+}
+
 .planet-system > .floating-card-top {
   top: 12%;
   right: -1%;
@@ -1646,135 +1655,22 @@ a:focus-visible {
   left: -2%;
 }
 
-.visual-label-top {
-  position: absolute;
-  top: 3%;
-  left: 0;
-  z-index: 2;
-}
-
-.visual-label-bottom {
-  position: absolute;
-  right: 0;
-  bottom: 3%;
-  z-index: 2;
-}
-
-/* The HTML uses .projects-grid (plural). */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  align-items: stretch;
-}
-
-.projects-grid > .project-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.projects-grid .project-art {
-  flex: 0 0 auto;
-  width: 100%;
-  height: 210px;
-  min-height: 210px;
-}
-
-.projects-grid .project-info {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.projects-grid .project-link {
-  margin-top: auto;
-  padding-top: 12px;
-}
-
-/* Tablet */
 @media (max-width: 1000px) {
-  .hero {
-    min-height: 680px;
-  }
-
-  .hero > .container.hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
-    gap: 18px;
-  }
-
-  .hero-visual {
-    min-height: 420px;
-  }
-
-  .planet-system {
-    width: min(100%, 420px);
-  }
-
-  .planet-system > .planet {
-    width: clamp(190px, 26vw, 260px);
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  .hero-visual { min-height: 430px; }
+  .planet-system { width: min(100%, 420px); }
+  .planet-system > .planet { width: clamp(220px, 29vw, 270px); }
 }
 
-/* Mobile */
 @media (max-width: 680px) {
-  .hero {
-    min-height: auto;
-    padding-top: 55px;
-    padding-bottom: 70px;
-  }
-
-  .hero > .container.hero-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-  }
-
-  .hero-visual {
-    min-height: 360px;
-    margin-top: 8px;
-  }
-
-  .planet-system {
-    width: min(100%, 360px);
-  }
-
-  .planet-system > .planet {
-    width: clamp(205px, 62vw, 285px);
-  }
-
+  .hero-visual { min-height: 370px; }
+  .planet-system { width: min(100%, 360px); }
+  .planet-system > .planet { width: clamp(220px, 64vw, 280px); }
   .planet-system > .floating-card-top {
-    top: 8%;
+    top: 4%;
     right: 0;
   }
-
   .planet-system > .floating-card-bottom {
-    bottom: 8%;
+    bottom: 4%;
     left: 0;
   }
-
-  .projects-section {
-    padding-top: 60px;
-    padding-bottom: 70px;
-  }
-
-  .projects-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-  }
-
-  .projects-grid .project-art {
-    height: 190px;
-    min-height: 190px;
-  }
-
-  .projects-section .heading-row {
-    align-items: flex-start;
-  }
 }
-
